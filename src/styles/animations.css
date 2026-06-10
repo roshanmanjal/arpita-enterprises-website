@@ -1,0 +1,93 @@
+.animated-card {
+  transform: translateZ(0);
+  transition: transform 200ms ease-out, box-shadow 200ms ease-out, border-color 200ms ease-out;
+  will-change: transform;
+}
+
+.animated-card:hover,
+.animated-card:focus-within {
+  transform: translateZ(0) scale(1.03);
+  border-color: #38bdf8;
+  box-shadow: 0 20px 40px -10px rgba(14, 165, 233, 0.3);
+  z-index: 20;
+}
+
+.animated-card img {
+  transform: translateZ(0);
+  transition: transform 200ms ease-out;
+}
+
+.animated-card:hover img,
+.animated-card:focus-within img {
+  transform: translateZ(0) scale(1.03);
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #1e293b 25%, #334155 37%, #1e293b 63%);
+  background-size: 400% 100%;
+  animation: skeleton-shimmer 1.2s ease-in-out infinite;
+}
+
+.rounded-inherit {
+  border-radius: inherit;
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+
+  .animated-card:hover,
+  .animated-card:focus-within,
+  .animated-card:hover img,
+  .animated-card:focus-within img {
+    transform: translateZ(0);
+  }
+
+  .skeleton-shimmer {
+    animation: none;
+    background: #e0f2fe;
+  }
+}
+
+.beat-on-hover {
+  transform: translateZ(0);
+  transition: border-color 200ms ease-out, box-shadow 200ms ease-out, background 200ms ease-out;
+}
+
+.beat-on-hover:hover,
+.beat-on-hover:focus-within {
+  animation: hover-beat 520ms ease-in-out both;
+  border-color: rgb(56 189 248);
+  box-shadow: 0 20px 40px -15px rgba(14, 165, 233, 0.3);
+}
+
+@keyframes hover-beat {
+  0%, 100% { transform: translateZ(0) scale(1); }
+  35% { transform: translateZ(0) scale(1.045); }
+  62% { transform: translateZ(0) scale(0.992); }
+}
