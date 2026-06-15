@@ -115,7 +115,7 @@ export default function ServiceAreasSection() {
               {[
                 { value: "6",    label: "Cities",        icon: <MapPin className="h-4 w-4 text-sky-600" /> },
                 { value: "30+",  label: "km Radius",     icon: <Network className="h-4 w-4 text-blue-600" /> },
-                { value: "500+", label: "Trade Partners", icon: <Package className="h-4 w-4 text-sky-700" /> },
+                { value: "100+", label: "Trade Partners", icon: <Package className="h-4 w-4 text-sky-700" /> },
               ].map((s) => (
                 <div key={s.label} className="flex flex-col items-center py-5 px-3">
                   <div className="mb-2">{s.icon}</div>
